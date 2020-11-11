@@ -3,6 +3,76 @@ body {
 	background: $white;
 }
 
+.hero-survey,
+.introduction,
+.survey-points,
+.concluding-thoughts {
+    position: relative;
+    z-index: 1;
+}
+
+.decor {
+    bottom: 0;
+    width: 3059px;
+    left: 50%;
+    transform: translateX(-50%);
+    pointer-events: none;
+    z-index: -1;
+
+    .introduction & {
+        width: 1762px;
+    }
+
+    &.a {
+    	width: 2144px;
+    }
+
+    &.b {
+    	width: 2314px;
+    }
+
+    &.b {
+    	width: 2554px;
+    }
+
+    .concluding-thoughts & {
+    	bottom: auto;
+    	top: 0;
+    	width: 2175px;
+    }
+
+    .i1,
+    .i2,
+    & {
+        position: absolute;
+    }
+
+    svg {
+        vertical-align: top;
+        position: relative;
+    }
+
+    .i1,
+    .i2 {
+        width: 332px;
+    }
+
+    .i1 {
+        left: 150px;
+        bottom: 22px;
+    }
+    .i2 {
+        right: 70px;
+        bottom: 105px;
+        transform: rotate(22deg);
+    }
+
+    .st00{clip-path:url(#SVGID_2_);}
+    .st03{fill:#E5745D;fill-opacity:0.14;}
+
+	.st04{clip-path:url(#SVGID_2_1);fill:#e4e9e2;}
+}
+
 .hero-survey {
 	padding: 178px 0 174px;
 	background: $jean url('/assets/images/bg-pattern-1.png') repeat;
@@ -179,7 +249,7 @@ body {
 .survey-points {
 	padding: 218px 0 120px;
 
-	&.bg-light-orannge {
+	&.bg-light-orange {
 		background: $cement;
 	}
 
@@ -192,7 +262,7 @@ body {
 	}
 
 	+ .survey-points {
-		margin-top: -350px;
+		// margin-top: -350px;
 	}
 
 	&:last-child {
