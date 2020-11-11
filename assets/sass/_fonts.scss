@@ -53,3 +53,15 @@
   $file-name: StyreneA-Medium-Web,
   $font-weight: 500
 );
+
+@include font-face(
+  $family-name: Brown,
+  $file-name: Brown-Regular,
+  $font-weight: 400
+);
+
+@include font-face(
+  $family-name: Brown,
+  $file-name: Brown-Bold,
+  $font-weight: 700
+);
