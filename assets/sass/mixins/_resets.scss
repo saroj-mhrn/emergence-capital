@@ -1,0 +1,5 @@
+@mixin list-reset {
+  @include margin(0 x);
+  list-style-type: none;
+  padding-left: 0;
+}

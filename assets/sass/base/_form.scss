@@ -1,0 +1,64 @@
+label {
+  display: none;
+}
+
+input[type='text'],
+input[type='email'] {
+  @include small-body($font--sans, 400);
+  border: 0;
+  border-radius: 0;
+  box-sizing: border-box;
+  line-height: 1;
+  outline: 0;
+  padding: $spacing--md $spacing--base;
+  transition: box-shadow 300ms ease-in-out;
+
+  @include mq($bp--tablet) {
+    @include padding(x $spacing--md);
+    min-width: 300px;
+  }
+
+  &::placeholder {
+    transition: color 300ms ease-in-out;
+  }
+
+  @each $theme, $colors in $form-themes {
+    .#{$theme} & {
+      background-color: nth($colors, 1);
+      box-shadow: inset 0 -1px 0 nth($colors, 1);
+      color: nth($colors, 2);
+
+      &::placeholder {
+        color: nth($colors, 2);
+      }
+
+      &:focus {
+        box-shadow: inset 0 -1px 0 nth($colors, 3);
+
+        &::placeholder {
+          color: rgba(nth($colors, 2), 0.5);
+        }
+      }
+    }
+  }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus input:-webkit-autofill {
+  @each $theme, $colors in $form-themes {
+    .#{$theme} & {
+      -webkit-box-shadow: 0 0 0 1000px nth($colors, 1) inset; /* stylelint-disable-line */
+      -webkit-text-fill-color: nth($colors, 2); /* stylelint-disable-line */
+      transition: background-color 5000s ease-in-out 0s;
+    }
+  }
+}
+
+input[type='submit'] {
+  @include button-text;
+  background: none;
+  border: 0;
+  color: inherit;
+  padding: 0;
+}

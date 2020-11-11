@@ -1,0 +1,31 @@
+@import '../main';
+
+.no-webkittextstroke {
+  .modernizr-text-stroke-featured-parent {
+    &:nth-child(even) {
+      .modernizr-text-stroke-featured {
+        color: $jean !important;
+      }
+    }
+
+    &:nth-child(odd) {
+      .modernizr-text-stroke-featured {
+        color: $emerald !important;
+      }
+    }
+  }
+
+  .modernizr-text-stroke-outline-heading {
+    color: $jean !important;
+  }
+
+  .modernizr-text-stroke-carousel {
+    color: $emerald !important;
+  }
+
+  .modernizr-text-stroke-nav {
+    @include mq(0, $bp--tablet-xxl) {
+      color: $white !important;
+    }
+  }
+}

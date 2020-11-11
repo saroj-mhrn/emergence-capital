@@ -1,0 +1,147 @@
+@mixin h1($weight: 200) {
+  @include fluid-font($font-size--h3 0, $font-size--h1 $bp--tablet-xl);
+  font-family: $font--serif;
+  font-weight: $weight;
+  line-height: $line-height--heading;
+}
+
+@mixin h2($weight: 200, $ff-min: $font-size--h3) {
+  @include fluid-font($ff-min $bp--tablet, $font-size--h2 $bp--tablet-xl);
+  font-family: $font--serif;
+  font-weight: $weight;
+  line-height: $line-height--heading;
+}
+
+@mixin h3($weight: 200, $lh: $line-height--heading) {
+  font-family: $font--serif;
+  font-size: $font-size--h3;
+  font-weight: $weight;
+  line-height: $line-height--heading;
+}
+
+@mixin h4($family: $font--sans, $font-size: $font-size--h4, $weight: 500) {
+  font-family: $family;
+  font-size: $font-size;
+  font-weight: $weight;
+  line-height: $line-height--base;
+}
+
+@mixin h5($weight: 400, $allcaps: false) {
+  font-family: $font--sans;
+  font-size: $font-size--h5;
+  font-weight: $weight;
+  line-height: $line-height--base;
+
+  @if $allcaps {
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+}
+
+@mixin h6($weight: 500, $lh: $line-height--heading) {
+  font-family: $font--sans;
+  font-size: $font-size--h6;
+  font-weight: $weight;
+  letter-spacing: 2px;
+  line-height: $lh;
+  text-transform: uppercase;
+}
+
+@mixin body($family: $font--body, $weight: 300) {
+  font-family: $family;
+  font-size: $font-size--base;
+  font-weight: $weight;
+  line-height: $line-height--base;
+}
+
+@mixin xl-body($family: $font--body, $weight: 300) {
+  @include fluid-font($font-size--base $bp--mobile, $font-size--lg $bp--tablet);
+  font-family: $family;
+  font-weight: $weight;
+  line-height: $line-height--base;
+}
+
+@mixin large-body($family: $font--body, $weight: 300) {
+  @include fluid-font($font-size--base $bp--mobile, $font-size--md $bp--tablet);
+  font-family: $family;
+  font-weight: $weight;
+  line-height: $line-height--base;
+}
+
+@mixin small-body($family: $font--body, $weight: 300) {
+  font-family: $family;
+  font-size: $font-size--sm;
+  font-weight: $weight;
+  line-height: $line-height--base;
+}
+
+@mixin meta($weight: 400) {
+  font-family: $font--sans;
+  font-size: $font-size--xs;
+  font-weight: $weight;
+  line-height: $line-height--base;
+}
+
+@mixin decorative-type(
+  $color: inherit,
+  $outlined: false,
+  $vertical: false,
+  $text-transform: uppercase,
+  $font-size: $decorative-font--sm,
+  $outline-width: 1.5px
+) {
+  font-family: $font--serif;
+  font-size: $font-size;
+  font-weight: 700;
+  text-transform: $text-transform;
+
+  @if $outlined {
+    color: transparent;
+    -webkit-text-stroke: $outline-width $color;
+  } @else {
+    color: $color;
+  }
+
+  @if $vertical {
+    writing-mode: vertical-lr;
+  }
+}
+
+@mixin dropcap {
+  @include fluid-font($decorative-font--sm $bp--mobile, $decorative-font--lg $bp--tablet);
+  color: $salmon;
+  float: left;
+  font-family: $font--serif;
+  font-weight: 200;
+  line-height: 1;
+  margin-top: -$spacing--sm;
+  padding-right: $spacing--md;
+
+  @include mq($bp--tablet) {
+    margin-top: -$spacing--base;
+    padding-right: $spacing--lg;
+  }
+
+  @-moz-document url-prefix() {
+    margin-top: $spacing--sm;
+    padding-bottom: $spacing--md;
+  }
+}
+
+@mixin button-text {
+  @include h6($lh: 1);
+}
+
+@mixin button-as-link {
+  @include h5;
+  border-bottom: 1px solid;
+  color: $salmon;
+  display: inline-block;
+  margin-bottom: 0;
+}
+
+@mixin hidden-text {
+  @include absolute(auto x x -10000px);
+  @include size(1px);
+  overflow: hidden;
+}

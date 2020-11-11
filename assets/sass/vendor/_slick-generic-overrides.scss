@@ -1,0 +1,52 @@
+.slick-track,
+.slick-slide {
+  margin-left: $column-gutter--sm;
+
+  @include mq($bp--tablet) {
+    margin-left: $outer-padding + $column-gutter--sm;
+  }
+
+  @include mq($container-width) {
+    margin-left: $spacing--xxl;
+  }
+}
+
+.slick-arrow {
+  @include absolute(50% x x);
+  @include margin(x $spacing--xs);
+  @include size($control-button-size--sm + 6px);
+  background-color: $color--bg;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: $control-button-size--sm;
+  border: 0;
+  border-radius: 50%;
+  box-shadow: $box-shadow--far, $box-shadow--close;
+  cursor: pointer;
+  outline: 0;
+  text-indent: -1000vw;
+  transform: translateY(-50%);
+  transition: opacity 400ms ease-in-out;
+  z-index: 1;
+
+  @include mq($bp--desktop) {
+    @include margin(x $spacing--md);
+    @include size($control-button-size--lg + $spacing--sm);
+    background-size: $control-button-size--lg;
+    opacity: 0;
+
+    .slick-slider:hover & {
+      opacity: 1;
+    }
+  }
+}
+
+.slick-prev {
+  background-image: url('../../../static/images/arrow-left.svg');
+  left: 0;
+}
+
+.slick-next {
+  background-image: url('../../../static/images/arrow-right.svg');
+  right: 0;
+}

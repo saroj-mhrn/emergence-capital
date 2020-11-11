@@ -1,0 +1,73 @@
+@import '../variables';
+@import '../functions/functions';
+@import '../mixins/mixins';
+@import 'slick-default';
+@import 'slick-generic-overrides';
+
+.slick-thoughts-slider {
+  .slick-track {
+    display: flex;
+  }
+
+  .slick-slide {
+    @include mq(0, $bp--tablet-xxl) {
+      height: inherit;
+      width: $slide-width--sm;
+
+      > div {
+        height: 100%;
+      }
+    }
+
+    @include mq($bp--tablet-xxl) {
+      width: $slide-width--thoughts-lg;
+    }
+
+    &:not(.slick-cloned) {
+      &:nth-child(even) {
+        .slick-article-card::before {
+          background-image: url('../../../static/images/patterns/yellow-pattern-top.png');
+        }
+
+        .slick-article-card::after {
+          background-image: url('../../../static/images/patterns/tan-pattern-bottom.png');
+        }
+      }
+    }
+  }
+}
+
+.slick-article-card-wrapper,
+.slick-article-card,
+.slick-article-card-inner {
+  @include mq(0, $bp--tablet-xxl) {
+    height: 100%;
+  }
+}
+
+.slick-article-card-inner {
+  box-sizing: border-box;
+}
+
+.slick-article-card {
+  .slick-slide & {
+    &::before,
+    &::after {
+      height: 0;
+      opacity: 0;
+      transition: height 200ms $timing--bezier, opacity 100ms ease-in-out;
+      transition-delay: 0;
+    }
+  }
+
+  .slick-slide.slick-active &,
+  .slick-slide:not(.slick-active):hover & {
+    &::before,
+    &::after {
+      height: $illustration-pattern-height;
+      opacity: 1;
+      transition: height 500ms $timing--bezier, opacity 400ms ease-in-out;
+      transition-delay: 200ms;
+    }
+  }
+}

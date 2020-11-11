@@ -1,0 +1,13 @@
+.modernizr-author-image {
+  .svgclippaths & {
+    &.modernizr-primary-author-image {
+      -webkit-clip-path: none; /* stylelint-disable-line */
+      clip-path: url(#primaryAuthorImageMask);
+    }
+
+    &.modernizr-secondary-author-image {
+      -webkit-clip-path: none; /* stylelint-disable-line */
+      clip-path: url(#secondaryAuthorImageMask);
+    }
+  }
+}

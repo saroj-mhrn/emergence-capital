@@ -1,0 +1,147 @@
+// Fonts
+$font--serif: 'Canela';
+$font--sans: 'Styrene';
+$font--body: 'GT America';
+
+// Font Sizes
+$font-size--xs: 0.875rem; // 14px
+$font-size--sm: 1rem; // 16px
+$font-size--base: 1.125rem; // 18px
+$font-size--md: 1.25rem; // 20px
+$font-size--lg: 1.5rem; // 24px
+$font-size--xl: 1.75rem; // 28px
+$font-size--xxl: 2.5rem; // 40px
+$font-size--xxxl: 3.75rem; // 60px;
+$font-size--xxxxl: 4.375rem; // 70px;
+
+// Decortive Font Sizes
+$decorative-font--xxs: 1.875rem;
+$decorative-font--xs: 3.125rem;
+$decorative-font--sm: 6.875rem;
+$decorative-font--lg: 12.5rem;
+
+// Font Sizes Applied
+$font-size--h1: $font-size--xxxxl;
+$font-size--h2: $font-size--xxxl;
+$font-size--h3: $font-size--xxl;
+$font-size--h4: $font-size--lg;
+$font-size--h5: $font-size--md;
+$font-size--h6: $font-size--xs;
+
+// Line Heights
+$line-height--base: 1.5;
+$line-height--heading: 1.2;
+$line-height--thought: 1.6;
+
+// Spacing
+$spacing--base: 20px;
+$spacing--xs: $spacing--base * 0.25;
+$spacing--sm: $spacing--base * 0.5;
+$spacing--md: $spacing--base * 1.5;
+$spacing--lg: $spacing--base * 2;
+$spacing--xl: $spacing--base * 3;
+$spacing--xxl: $spacing--base * 4;
+$spacing--xxxl: $spacing--base * 6;
+$spacing--xxxxl: $spacing--base * 9;
+
+// Colors
+$black: #000000;
+$transparent-black: rgba($black, 0.2);
+$gray: #41424a;
+$white: #ffffff;
+$cement: #f9f4f1;
+$tan: #dcccc1;
+$taupe: #b28c72;
+$mint: #b5e4c9;
+$dark-mint: #67a582;
+$jean: #466684;
+$dark-jean: #324f6b;
+$salmon: #e5745d;
+$light-salmon: #ffb7a9;
+$emerald: #15403d;
+$dark-emerald: #0c2a28;
+$ui-blue: #417edf;
+
+// Colors Applied
+$color--text: $gray;
+$color--text-light: $white;
+$color--text-theme-light: $emerald;
+$color--text-theme-dark: $white;
+$color--spot-theme-light: $salmon;
+$color--spot-theme-dark: $mint;
+$color--bg: $white;
+$color--bg-theme-light: $cement;
+$color--bg-theme-dark: $jean;
+$color--shade-theme-light: $dark-emerald;
+$color--shade-theme-dark: $dark-jean;
+
+// Breakpoints
+$bp--mobile: 370px;
+$bp--phablet: 450px;
+$bp--phablet-xl: 550px;
+$bp--tablet: 600px;
+$bp--tablet-xl: 770px;
+$bp--tablet-xxl: 900px;
+$bp--desktop: 1070px;
+$bp--desktop-xl: 1350px;
+$bp--desktop-xxl: 1500px;
+$bp--desktop-xxxl: 1700px;
+$bp--desktop-xxxxl: 2000px;
+$bp--vertical: 800px;
+
+$bp--modal-vertical: 610px;
+$bp--modal-horizontal: 1250px;
+
+// Borders
+$border-color--base: $tan;
+$border--transparent: 1px solid transparent;
+$border--base: 1px solid $border-color--base;
+
+// Shadows
+$box-shadow--far: 5px 20px 40px rgba($black, 0.2);
+$box-shadow--close: 5px 5px 10px rgba($black, 0.1);
+$box-shadow--border: 0 -1px 0 $border-color--base;
+
+// Transitions
+$timing--bezier: cubic-bezier(0.47, 0.22, 0.2, 0.97);
+
+// Sizes
+$double-border-size: 3px;
+$control-button-size--sm: 36px;
+$control-button-size--lg: 58px;
+$modal-header-height: 240px;
+$illustration-pattern-width: 430px;
+$illustration-pattern-height: 80px;
+$illustration-pattern-width--sm: $illustration-pattern-width / 2;
+$illustration-pattern-height--sm: $illustration-pattern-height / 2;
+$slide-height--companies-sm: 50vh;
+$slide-height--companies-lg: 450px;
+$slide-width--sm: 80vw;
+$slide-width--companies-md: 50vw;
+$slide-width--thoughts-lg: 720px;
+$logo-height--sm: 40px;
+$logo-height--lg: 45px;
+$menu-button-height: 34px;
+$nav-padding--sm: $spacing--base;
+$nav-padding--lg: $spacing--lg;
+$nav-height--sm: $logo-height--sm + ($nav-padding--sm * 2);
+$nav-height--lg: $logo-height--lg + ($nav-padding--lg * 2);
+$header-padding--sm: $spacing--md;
+$header-padding--lg: $spacing--xl;
+
+// Grid
+$total-columns: 12;
+$column-gutter--sm: $spacing--base;
+$column-gutter--lg: $spacing--lg;
+$container-width: 1400px;
+$container-width--modal: 700px;
+$container-width--sm: 800px;
+$container-width--xs: 650px;
+$outer-padding: $spacing--md;
+
+// Form Element Theming
+$form-themes: (
+  'jean': ($dark-jean, $white, $mint),
+  'cement': ($cement, $emerald, $salmon),
+  'white': ($white, $emerald, $salmon)
+);

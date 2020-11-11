@@ -1,0 +1,66 @@
+@mixin double-border($location, $value: 0, $color: false, $pseudo: 'before') {
+  position: relative;
+
+  &::#{$pseudo} {
+    box-sizing: border-box;
+    content: '';
+
+    @if $location == 'left' or $location == 'right' {
+      @include absolute(0 x);
+      border-left: $border--base;
+      border-right: $border--base;
+      width: $double-border-size;
+
+      @if $location == 'left' {
+        left: $value;
+      }
+
+      @if $location == 'right' {
+        right: $value;
+      }
+    }
+
+    @if $location == 'top' or $location == 'bottom' {
+      @include absolute(x 0);
+      border-bottom: $border--base;
+      border-top: $border--base;
+      height: $double-border-size;
+
+      @if $location == 'bottom' {
+        bottom: $value;
+      }
+
+      @if $location == 'top' {
+        top: $value;
+      }
+    }
+
+    @if $color {
+      border-color: $color;
+    }
+  }
+}
+
+@mixin double-border-section($value: 0, $color: false) {
+  @include double-border(left, $value, $color);
+}
+
+@mixin double-border-outline($padding, $color) {
+  $padding--sm: $padding;
+  $padding--lg: $padding + 2px;
+  position: relative;
+
+  &::before,
+  &::after {
+    border: 1px solid $color;
+    content: '';
+  }
+
+  &::before {
+    @include absolute($padding--lg $padding--sm $padding--sm $padding--lg);
+  }
+
+  &::after {
+    @include absolute($padding--sm $padding--lg $padding--lg $padding--sm);
+  }
+}

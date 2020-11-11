@@ -1,0 +1,23 @@
+@mixin quote-container {
+  background-color: $jean;
+  color: $white;
+  transition: background-color 300ms ease-in-out;
+
+  &:hover {
+    background-color: $dark-jean;
+  }
+}
+
+@mixin quote-text($icon: true) {
+  @include absolute(x 0);
+  margin-bottom: 0;
+  padding: $spacing--md;
+
+  &::before {
+    @include size(40px, 30px);
+    background-image: url('../../../../static/images/quote.svg');
+    content: '';
+    display: block;
+    margin-bottom: $spacing--base;
+  }
+}

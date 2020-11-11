@@ -1,0 +1,92 @@
+@import '../variables';
+@import '../functions/functions';
+@import '../mixins/mixins';
+@import 'slick-default';
+@import 'slick-generic-overrides';
+
+.slick-slide:not(.slick-cloned) {
+  &:nth-child(even) {
+    .slick-illustrations::before {
+      background-image: url('../../../static/images/patterns/pink-pattern-top-sm.png');
+    }
+
+    .slick-illustrations::after {
+      background-image: url('../../../static/images/patterns/green-pattern-bottom-sm.png');
+    }
+  }
+}
+
+.slick-company-link {
+  .slick-initialized & {
+    cursor: url('../../../static/images/zoom-cursor.svg') 29 29, zoom-in;
+  }
+}
+
+.slick-illustrations {
+  .slick-slide & {
+    &::before,
+    &::after {
+      height: 0;
+      opacity: 0;
+      transition: height 200ms $timing--bezier, opacity 100ms ease-in-out;
+      transition-delay: 0;
+    }
+  }
+
+  .slick-slide.slick-active &,
+  .slick-slide:not(.slick-active):hover & {
+    &::before,
+    &::after {
+      height: $illustration-pattern-height--sm;
+      opacity: 1;
+      transition: height 500ms $timing--bezier, opacity 400ms ease-in-out;
+      transition-delay: 200ms;
+    }
+  }
+}
+
+.slick-crop {
+  .slick-slide & {
+    position: relative;
+
+    &::before,
+    &::after {
+      @include absolute(x 0 x);
+      background-color: $cement;
+      content: '';
+      height: $spacing--base;
+      transition: height 400ms ease-out;
+      transition-delay: 100ms;
+    }
+
+    &::before {
+      top: 0;
+    }
+
+    &::after {
+      bottom: 0;
+    }
+  }
+
+  .slick-slide.slick-active &,
+  .slick-slide:hover & {
+    &::before,
+    &::after {
+      height: 0;
+      transition: height 400ms ease-out;
+      transition-delay: 0;
+    }
+  }
+}
+
+.slick-founder-info {
+  .slick-slide & {
+    opacity: 0;
+    transition: all 400ms ease-in-out;
+  }
+
+  .slick-slide.slick-active &,
+  .slick-slide:hover & {
+    opacity: 1;
+  }
+}

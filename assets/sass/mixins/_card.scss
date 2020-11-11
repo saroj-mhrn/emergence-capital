@@ -1,0 +1,63 @@
+$card-padding--lg: $spacing--xxl;
+$card-padding--md: $spacing--xl;
+$card-padding--sm: $spacing--md;
+$card-double-border-padding--lg: $spacing--base;
+$card-double-border-padding--sm: $spacing--xs;
+
+@mixin card($background-color: $white, $border-color: $salmon, $color: $gray, $box-shadow: true) {
+  @include double-border-outline($card-double-border-padding--sm, $border-color);
+  background-color: $background-color;
+  color: $color;
+  padding: $card-padding--sm;
+
+  @if ($box-shadow) {
+    box-shadow: $box-shadow--close, $box-shadow--far;
+  }
+
+  @include mq($bp--tablet) {
+    @include double-border-outline($card-double-border-padding--lg, $border-color);
+    padding: $card-padding--md;
+  }
+
+  @include mq($bp--tablet-xxl) {
+    padding: $card-padding--lg;
+  }
+
+  &::before,
+  &::after {
+    color: $border-color;
+    pointer-events: none;
+  }
+}
+
+@mixin card-title-spacing {
+  @include mq(0, $bp--tablet-xxl) {
+    margin-bottom: $spacing--sm;
+  }
+}
+
+@mixin card-tags($border-color: $salmon) {
+  margin-bottom: $spacing--xl;
+  position: relative;
+
+  &::before {
+    @include absolute(x x 100% 50%);
+    border-left: 1px solid $border-color;
+    content: '';
+    height: $card-padding--sm - $card-double-border-padding--sm;
+
+    @include mq($bp--tablet) {
+      height: $card-padding--md - $card-double-border-padding--lg;
+    }
+
+    @include mq($bp--tablet-xxl) {
+      height: $card-padding--lg - $card-double-border-padding--lg;
+    }
+  }
+}
+
+@mixin card-tags-text($border-color: $salmon) {
+  @include large-body($font--sans);
+  color: $border-color;
+  display: inline-block;
+}

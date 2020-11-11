@@ -1,0 +1,39 @@
+@mixin illustrations($size: 'regular') {
+  position: relative;
+  z-index: 0;
+
+  @include mq($bp--desktop) {
+    @if $size == 'small' {
+      @include margin($illustration-pattern-height--sm x);
+    } @else {
+      @include margin($illustration-pattern-height x);
+    }
+  }
+
+  &::before,
+  &::after {
+    @if $size == 'small' {
+      @include size($illustration-pattern-width--sm, $illustration-pattern-height--sm);
+      background-size: $illustration-pattern-width--sm $illustration-pattern-height--sm;
+    } @else {
+      @include size($illustration-pattern-width, $illustration-pattern-height);
+      background-size: $illustration-pattern-width $illustration-pattern-height;
+    }
+    content: '';
+    display: block;
+    right: 0;
+    z-index: -1;
+
+    @include mq(0, $bp--desktop) {
+      display: none;
+    }
+  }
+
+  &::before {
+    @include absolute(x $spacing--md 100% x);
+  }
+
+  &::after {
+    @include absolute(100% x x $spacing--md);
+  }
+}

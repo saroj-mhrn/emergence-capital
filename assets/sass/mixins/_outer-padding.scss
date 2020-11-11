@@ -1,0 +1,5 @@
+@mixin outer-padding {
+  @include mq($bp--tablet) {
+    @include padding(x $outer-padding);
+  }
+}

@@ -1,0 +1,50 @@
+@mixin underline-link {
+  border-bottom: 0;
+  padding-bottom: 2px;
+  position: relative;
+  transition: all 300ms ease-out;
+  z-index: 0;
+
+  &::before,
+  &::after {
+    @include absolute(x x 0 0);
+    border-bottom: 1px solid;
+    content: '';
+    opacity: 0.25;
+    transition: width 300ms ease-out;
+  }
+
+  &::before {
+    width: 100%;
+  }
+
+  &::after {
+    width: 0;
+    z-index: 1;
+  }
+
+  &:hover {
+    &::after {
+      opacity: 0.75;
+      width: 100%;
+    }
+  }
+}
+
+@mixin slide-link-up {
+  transition: transform 300ms ease-in-out;
+
+  @include mq($bp--desktop) {
+    &:hover {
+      transform: translateY(-5%) translate3d(0, 0, 0);
+    }
+  }
+}
+
+@mixin change-link-color {
+  transition: color 300ms ease-in-out;
+
+  &:hover {
+    color: $salmon;
+  }
+}

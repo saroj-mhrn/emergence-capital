@@ -1,0 +1,55 @@
+@include font-face(
+  $family-name: Canela,
+  $file-name: Canela-Thin-Web,
+  $font-weight: 200
+);
+
+@include font-face(
+  $family-name: Canela,
+  $file-name: Canela-Light-Web,
+  $font-weight: 300
+);
+
+@include font-face(
+  $family-name: Canela,
+  $file-name: Canela-Bold-Web,
+  $font-weight: 700
+);
+
+@include font-face(
+  $family-name: GT America,
+  $file-name: GT-America-Standard-Light,
+  $font-weight: 300
+);
+
+@include font-face(
+  $family-name: GT America,
+  $file-name: GT-America-Standard-Light-Italic,
+  $font-weight: 300,
+  $font-style: italic
+);
+
+@include font-face(
+  $family-name: GT America,
+  $file-name: GT-America-Standard-Medium,
+  $font-weight: 500
+);
+
+@include font-face(
+  $family-name: GT America,
+  $file-name: GT-America-Standard-Medium-Italic,
+  $font-weight: 500,
+  $font-style: italic
+);
+
+@include font-face(
+  $family-name: Styrene,
+  $file-name: StyreneA-Regular-Web,
+  $font-weight: 400
+);
+
+@include font-face(
+  $family-name: Styrene,
+  $file-name: StyreneA-Medium-Web,
+  $font-weight: 500
+);
