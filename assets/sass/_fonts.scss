@@ -12,6 +12,18 @@
 
 @include font-face(
   $family-name: Canela,
+  $file-name: Canela-Italic-Web,
+  $font-weight: 400
+);
+
+@include font-face(
+  $family-name: Canela,
+  $file-name: Canela-LightItalic,
+  $font-weight: 300
+);
+
+@include font-face(
+  $family-name: Canela,
   $file-name: Canela-Bold-Web,
   $font-weight: 700
 );

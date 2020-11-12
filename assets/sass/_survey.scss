@@ -1,6 +1,9 @@
 body {
 	margin: 0;
-	background: $white;
+}
+
+.survey-content {
+	overflow: hidden;
 }
 
 .hero-survey,
@@ -12,33 +15,101 @@ body {
 }
 
 .decor {
-    bottom: 0;
-    width: 3059px;
+    bottom: -2px;
     left: 50%;
     transform: translateX(-50%);
     pointer-events: none;
     z-index: -1;
+    width: 900px;
+
+    @media only screen and (min-width: 768px) {
+    	width: 1700px;
+    }
+
+    @media only screen and (min-width: 1024px) {
+    	width: 2200px;
+    }
+
+    @include mq($bp--desktop) {
+    	width: 3059px;
+    }
 
     .introduction & {
-        width: 1762px;
+    	width: 900px;
+
+	    @media only screen and (min-width: 768px) {
+	    	width: 1100px
+	    }
+
+	    @media only screen and (min-width: 1024px) {
+	    	width: 1400px;
+	    }
+
+	    @include mq($bp--desktop) {
+	        width: 1762px;
+	    }
+    }
+
+    &.a,
+    &.b,
+    &.c,
+    &.d {
+    	width: 900px;
+
+    	@media only screen and (min-width: 768px) {
+    		width: 1300px;
+    	}
+
+    	@media only screen and (min-width: 1024px) {
+    		width: 1500px;
+    	}
     }
 
     &.a {
-    	width: 2144px;
+
+    	@include mq($bp--desktop) {
+	    	width: 3059px;
+	    }
     }
 
     &.b {
-    	width: 2314px;
+
+    	@include mq($bp--desktop) {
+	    	width: 2314px;
+	    }
     }
 
-    &.b {
-    	width: 2554px;
+    &.c {
+
+    	@include mq($bp--desktop) {
+	    	width: 2554px;
+	    }
     }
+
+    &.d {
+
+    	@include mq($bp--desktop) {
+	    	width: 2432px;
+	    }
+    }
+
 
     .concluding-thoughts & {
     	bottom: auto;
     	top: 0;
-    	width: 2175px;
+    	width: 900px;
+
+    	@media only screen and (min-width: 768px) {
+    		width: 1300px;
+    	}
+
+    	@media only screen and (min-width: 1024px) {
+    		width: 1500px;
+    	}
+
+    	@include mq($bp--desktop) {
+	    	width: 2175px;
+	    }
     }
 
     .i1,
@@ -54,17 +125,28 @@ body {
 
     .i1,
     .i2 {
-        width: 332px;
+        width: 250px;
+
+        @media only screen and (min-width: 768px) {
+        	width: 370px;
+        }
     }
 
     .i1 {
-        left: 150px;
-        bottom: 22px;
+        left: 126px;
+        bottom: 15px;
     }
     .i2 {
-        right: 70px;
-        bottom: 105px;
+        right: 69px;
+        bottom: 53px;
         transform: rotate(22deg);
+        width: 250px;
+
+        @media only screen and (min-width: 768px) {
+        	width: 332px;
+        	right: 0;
+        	bottom: 89px;
+        }
     }
 
     .st00{clip-path:url(#SVGID_2_);}
@@ -74,11 +156,35 @@ body {
 }
 
 .hero-survey {
-	padding: 178px 0 174px;
-	background: $jean url('/assets/images/bg-pattern-1.png') repeat;
+	padding: 80px 0 100px;
+	background: $jean url('/assets/images/bg-gray.jpg') no-repeat 100% 0 / cover;
 	color: $white;
 	font-size: 1.0625rem;
 	line-height: 1.58;
+	position: relative;
+
+	@media only screen and (min-width: 768px) {
+		padding: 120px 0 140px;
+	}
+
+	@include mq($bp--tablet-xl) {
+		padding: 150px 0 189px;
+	}
+
+	@include mq($bp--desktop) {
+		padding: 178px 0 189px;
+	}
+
+	&:after {
+		content: "";
+		background: url('/assets/images/bg-pattern-1.png') repeat;
+		position: absolute;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		z-index: 1;
+	}
 
 	.container {
 		@include container;
@@ -86,11 +192,17 @@ body {
 		padding-left: 20px;
 		padding-right: 20px;
 		box-sizing: border-box;
+		position: relative;
+		z-index: 2;
 
 		@include mq($bp--tablet) {
 			padding-left: 30px;
 			padding-right: 30px;
 		}
+	}
+
+	.decor {
+		z-index: 2;
 	}
 
 	.inner {
@@ -123,10 +235,15 @@ body {
 }
 
 .introduction {
-	padding: 95px 0 54px;
+	padding: 80px 0 150px;
 	overflow: hidden;
 	font-size: 1.0625rem;
 	line-height: 1.58;
+	background: $white;
+
+	@media only screen and (min-width: 768px) {
+		padding: 80px 0 271px;
+	}
 
 	.container {
 		@include container;
@@ -165,16 +282,27 @@ body {
 	}
 
 	.intro-content {
-		display: flex;
-		flex-wrap: wrap;
+
+		@media only screen and(min-width: 768px) {
+			display: flex;
+			flex-wrap: wrap;
+		}
 
 		.left-col {
-			flex: 1;
-			padding-right: 30px;
+			margin-bottom: 40px;
+			
+			@media only screen and(min-width: 768px) {
+				flex: 1;
+				padding-right: 30px;
+				margin-bottom: 0;
+			}
 		}
 
 		.right-col {
-			width: 278px;
+
+			@media only screen and(min-width: 768px) {
+				width: 278px;
+			}
 		}
 
 		p {
@@ -228,6 +356,7 @@ body {
 						left: 50%;
 						transform: translate(-50%, -50%);
 						margin-top: -1px;
+						margin-left: 1px;
 					}
 				}
 
@@ -247,7 +376,6 @@ body {
 }
 
 .survey-points {
-	padding: 218px 0 120px;
 
 	&.bg-light-orange {
 		background: $cement;
@@ -261,11 +389,8 @@ body {
 		background: $white;
 	}
 
-	+ .survey-points {
-		// margin-top: -350px;
-	}
-
 	&:last-child {
+		padding-bottom: 41px;
 
 		.block {
 			padding-bottom: 0;
@@ -291,8 +416,16 @@ body {
 	}
 
 	.block {
-		padding-bottom: 334px;
+		padding-bottom: 180px;
 		position: relative;
+
+		@media only screen and (min-width: 768px) {
+			padding-bottom: 224px;
+		}
+
+		@include mq($bp--tablet-xl) {
+			padding-bottom: 334px;
+		}
 
 		&:after,
 		&:before {
@@ -302,18 +435,34 @@ body {
 			left: 50%;
 			transform: translateX(-50);
 			width: 2px;
-			height: 300px;
+			height: 160px;
 			background: $light-salmon;
+
+			@media only screen and (min-width: 768px) {
+				height: 200px;
+			}
+
+			@include mq($bp--tablet-xl) {
+				height: 300px;
+			}
 		}
 
 		&:after {
-			height: 150px;
+			height: 80px;
 			background: $salmon;
+
+			@media only screen and (min-width: 768px) {
+				height: 100px;
+			}
+
+			@include mq($bp--tablet-xl) {
+				height: 150px;
+			}
 		}
 	}
 
 	.heading {
-		max-width: 900px;
+		max-width: 970px;
 		margin: 0 auto 41px;
 		text-align: center;
 		padding-top: 40px;
@@ -329,16 +478,21 @@ body {
 			border-radius: 999px;
 			background: $salmon;
 			margin: 0 auto 30px;
-			padding: 9px 12px 6px;
+			padding: 9px 6px 6px;
 			font: 20px/1 $font--brown;
 			box-sizing: border-box;
+
+			&.sm {
+				font-size: 17px;
+				padding: 9px 24px 6px;
+			}
 
 			em {
 				font-style: normal;
 				display: inline-block;
 				vertical-align: middle;
 				padding-left: 6px;
-				margin-left: 8px;
+				margin-left: 12px;
 				position: relative;
 
 				&:before {
@@ -348,46 +502,93 @@ body {
 					width: 2px;
 					left: -2px;
 					top: 1px;
-					bottom: 4px;
+					bottom: 1px;
+
+					@media only screen and (min-width: 768px) {
+						bottom: 4px;
+					}
 				}
 			}
 		}
 
 		h3 {
-			font-size: 3.125rem;
+			font-size: 1.875rem;
 			line-height: 1.21;
 			font-weight: 700;
 			color: $emerald;
 			margin: 0;
+
+			@media only screen and (min-width: 768px) {
+				font-size: 2.5rem;
+			}
+
+			@include mq($bp--tablet-xl) {
+				font-size: 3.125rem;
+			}
 		}
 
 		h4 {
-			font: 400 2.5rem/1.2 $font--serif;
+			font: 400 1.625rem/1.2 $font--serif;
 			color: $emerald;
 			max-width: 790px;
-			margin: 0 auto;
+			margin: 7px auto 0;
+			letter-spacing: 0.7px;
+
+			@media only screen and (min-width: 768px) {
+				font-size: 1.875rem;
+			}
+
+			@include mq($bp--tablet-xl) {
+				font-size: 2.5rem;
+			}
 		}
 	}
 
 	.row {
-		display: flex;
-		flex-wrap: wrap;
-		align-items: center;
 		margin: 0 -15px;
+
+		@media only screen and(min-width: 768px) {
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+		}
 
 		&.alt {
 			flex-direction: row-reverse;
 		}
 
 		+ .row {
-			margin-top: 150px;
+			margin-top: 50px;
+
+			@media only screen and(min-width: 768px) {
+				margin-top: 100px;
+			}
+
+			@media only screen and(min-width: 1024px) {
+				margin-top: 150px;
+			}
 		}
 	}
 
 	.img {
-		width: 718px;
 		padding: 0 15px;
 		box-sizing: border-box;
+
+		@media only screen and(min-width: 768px) {
+			width: 400px;
+		}
+
+		@include mq($bp--tablet-xl) {
+			width: 500px;
+		}
+
+		@include mq($bp--desktop) {
+			width: 600px;
+		}
+
+		@include mq($bp--desktop-xl) {
+			width: 718px;
+		}
 
 		img {
 			width: 100%;
@@ -395,8 +596,13 @@ body {
 	}
 
 	.desc {
-		flex: 1;
 		padding: 0 15px;
+		margin-bottom: 40px;
+
+		@media only screen and(min-width: 768px) {
+			flex: 1;
+			margin-bottom: 0;
+		}
 	}
 
 	p {
@@ -404,7 +610,15 @@ body {
 	}
 
 	.highlight-txt {
-		font: 200 2.625rem/1.2 $font--serif;
+		font: 200 1.625rem/1.2 $font--serif;
+
+		@media only screen and(min-width: 768px) {
+			font-size: 1.875rem;
+		}
+
+		@include mq($bp--tablet-xl) {
+			font-size: 2.625rem;
+		}
 
 		&:not(:last-child) {
 			margin-bottom: 20px;
@@ -427,13 +641,13 @@ body {
 		display: inline-block;
 		vertical-align: top;
 		background: $salmon;
-		padding: 13px 38px 14px 20px;
-		letter-spacing: 1px;
+		padding: 13px 38px 13px 20px;
 		border-radius: 50px;
 		border: none;
 		color: $white;
 		font: 700 17px/1 $font--brown;
 		position: relative;
+		transition: background 0.3s linear;
 
 		&:before {
 			content: "+";
@@ -442,31 +656,55 @@ body {
 			top: 50%;
 			transform: translateY(-50%);
 		}
+
+		&:hover {
+			background: darken($salmon, 10%);
+		}
 	}
 
 	.img-full {
 		text-align: center;
 		margin-bottom: 30px;
+
+		img {
+			max-width: 100%;
+		}
 	}
 
 	.text-row {
 		display: flex;
 		flex-wrap: wrap;
-		margin: 0 -15px;
+		margin: -15px;
 
 		.col {
-			width: 50%;
-			padding: 0 15px;
+			width: 100%;
+			padding: 15px;
 			box-sizing: border-box;
+
+			@media only screen and (min-width: 768px) {
+				width: 50%;
+			}	
 		}
 	}
 }
 
 .concluding-thoughts {
-	padding: 241px 0 102px;
+	padding: 160px 0 80px;
 	background: #93bdad url('/assets/images/bg-pattern-2.png') repeat;
 	font-size: 1.250rem;
 	line-height: 1.5;
+
+	@media only screen and (min-width: 768px) {
+		padding: 200px 0 80px;
+	}
+
+	@include mq($bp--tablet-xxl) {
+		padding: 250px 0 100px;
+	}
+
+	@include mq($bp--desktop) {
+		padding: 324px 0 122px;
+	}
 
 	.container {
 		@include container;
