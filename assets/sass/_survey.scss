@@ -157,7 +157,7 @@ body {
 
 .hero-survey {
 	padding: 80px 0 100px;
-	background: $jean url('/assets/images/bg-gray.jpg') no-repeat 100% 0 / cover;
+	background: $jean url('../../images/bg-gray.jpg') no-repeat 100% 0 / cover;
 	color: $white;
 	font-size: 1.0625rem;
 	line-height: 1.58;
@@ -177,7 +177,7 @@ body {
 
 	&:after {
 		content: "";
-		background: url('/assets/images/bg-pattern-1.png') repeat;
+		background: url('../../images/bg-pattern-1.png') repeat;
 		position: absolute;
 		right: 0;
 		top: 0;
@@ -348,7 +348,7 @@ body {
 
 					&:before {
 						content: "";
-						background: url('/assets/images/arrow-down.svg') no-repeat 0 0 / 10px 10px;
+						background: url('../../images/arrow-down.svg') no-repeat 0 0 / 10px 10px;
 						width: 10px;
 						height: 10px;
 						position: absolute;
@@ -690,7 +690,7 @@ body {
 
 .concluding-thoughts {
 	padding: 160px 0 80px;
-	background: #93bdad url('/assets/images/bg-pattern-2.png') repeat;
+	background: #93bdad url('../../images/bg-pattern-2.png') repeat;
 	font-size: 1.250rem;
 	line-height: 1.5;
 
